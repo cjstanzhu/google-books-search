@@ -14,10 +14,6 @@ class Search extends Component {
         searchTerm: ""
     };
 
-    // componentDidMount() {
-    
-    // };
-
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({[name]: value});
@@ -43,7 +39,6 @@ class Search extends Component {
     };
 
     saveBook = id => {
-        // console.log(this.state.searchResults[id]);
         let book = this.state.searchResults[id]
 
         API.saveBook({
@@ -54,7 +49,6 @@ class Search extends Component {
                 image: book.volumeInfo.imageLinks.thumbnail
             })
             .then(res => {
-                // console.log("book saved");
                 alert("Book has been successfully saved!")
             })
             .catch(err => {
